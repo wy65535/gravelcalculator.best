@@ -1,0 +1,40 @@
+# robots.txt for GravelCalculator.best
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Specifically allow important pages
+Allow: /index.html
+Allow: /privacy.html
+Allow: /sitemap.xml
+
+# Disallow admin or private areas (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://gravelcalculator.best/sitemap.xml
+
+# Crawl-delay for specific bots (optional, uncomment if needed)
+# User-agent: Googlebot
+# Crawl-delay: 0
+
+# User-agent: Bingbot
+# Crawl-delay: 0
+
+# Block bad bots (uncomment if needed)
+# User-agent: BadBot
+# Disallow: /
+
+# User-agent: MJ12bot
+# Disallow: /
+
+# Allow Google AdSense bot
+User-agent: Mediapartners-Google
+Allow: /
+
+# Allow Google AdSense crawler
+User-agent: AdsBot-Google
+Allow: /
+
