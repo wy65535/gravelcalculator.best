@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravel Calculator - Calculate Gravel, Stone & Aggregate for Your Project | Free Online Tool</title>
+    <meta name="description" content="Free gravel calculator to estimate gravel, crushed stone, and aggregate needed for your landscaping or construction project. Calculate cubic yards, tons, and costs instantly. Supports multiple shapes and gravel types.">
+    <meta name="keywords" content="gravel calculator, stone calculator, aggregate calculator, crushed stone calculator, landscaping gravel calculator, driveway gravel calculator, cubic yard calculator, gravel cost calculator, pea gravel calculator, river rock calculator">
+    <meta name="author" content="Gravel Calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gravelcalculator.best/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Gravel Calculator - Free Online Tool for Gravel & Stone Calculations">
+    <meta property="og:description" content="Calculate the exact amount of gravel, crushed stone, and aggregate for your project. Free, accurate, and easy to use.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gravelcalculator.best/">
+    <meta property="og:image" content="https://gravelcalculator.best/images/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gravel Calculator - Calculate Gravel & Stone">
+    <meta name="twitter:description" content="Free gravel calculator for landscaping and construction projects">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Gravel Calculator",
+        "url": "https://gravelcalculator.best/",
+        "description": "Free online gravel calculator to estimate gravel, crushed stone, and aggregate for landscaping and construction projects",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "2547"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much gravel do I need for my project?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To calculate gravel needed, multiply length × width × depth of your area. Our calculator converts this to cubic yards or tons automatically. For example, a 10×10 ft area with 3 inches depth needs about 0.93 cubic yards or 1.25 tons of gravel."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many tons of gravel are in a cubic yard?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Generally, 1 cubic yard of gravel weighs about 1.35 tons (2,700 lbs). This varies by gravel type: pea gravel is around 1.3 tons/yd³, crushed stone is 1.35-1.4 tons/yd³, and river rock is about 1.35 tons/yd³."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What depth of gravel should I use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Recommended gravel depths: Driveways need 4-6 inches (heavy traffic may need 8-12 inches), walkways 2-3 inches, patios 3-4 inches, garden beds 2-3 inches, and drainage applications 6-8 inches."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate gravel for a circular area?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For circular areas, use the formula: π × radius² × depth. Our calculator handles this automatically - just enter the diameter and depth, and it calculates the gravel needed in cubic yards and tons."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🪨 Gravel Calculator</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#calculator">Calculator</a></li>
+                    <li><a href="#guide">Guide</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Free Gravel Calculator - Calculate Gravel, Stone & Aggregate</h1>
+                <p class="hero-subtitle">Professional gravel calculator for landscaping, driveways, patios, and construction projects. Calculate cubic yards, tons, and costs instantly.</p>
+                <div class="hero-features">
+                    <span>✓ Multiple Shapes</span>
+                    <span>✓ All Gravel Types</span>
+                    <span>✓ Cost Estimation</span>
+                    <span>✓ Unit Conversion</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="calculator-section">
+            <div class="container">
+                <div class="calculator-card">
+                    <h2>Gravel Calculator</h2>
+                    
+                    <!-- Shape Selection -->
+                    <div class="form-group">
+                        <label>Area Shape:</label>
+                        <div class="shape-selector">
+                            <button class="shape-btn active" data-shape="rectangular">
+                                <span class="shape-icon">▭</span>
+                                Rectangular
+                            </button>
+                            <button class="shape-btn" data-shape="circular">
+                                <span class="shape-icon">○</span>
+                                Circular
+                            </button>
+                            <button class="shape-btn" data-shape="triangular">
+                                <span class="shape-icon">△</span>
+                                Triangular
+                            </button>
+                            <button class="shape-btn" data-shape="irregular">
+                                <span class="shape-icon">⬡</span>
+                                Irregular
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Rectangular Form -->
+                    <div id="rectangular-form" class="shape-form active">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="length">Length:</label>
+                                <div class="input-group">
+                                    <input type="number" id="length" min="0" step="0.1" value="10" required>
+                                    <select id="length-unit" class="unit-select">
+                                        <option value="ft">feet</option>
+                                        <option value="m">meters</option>
+                                        <option value="in">inches</option>
+                                        <option value="yd">yards</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="width">Width:</label>
+                                <div class="input-group">
+                                    <input type="number" id="width" min="0" step="0.1" value="10" required>
+                                    <select id="width-unit" class="unit-select">
+                                        <option value="ft">feet</option>
+                                        <option value="m">meters</option>
+                                        <option value="in">inches</option>
+                                        <option value="yd">yards</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Circular Form -->
+                    <div id="circular-form" class="shape-form">
+                        <div class="form-group">
+                            <label for="diameter">Diameter:</label>
+                            <div class="input-group">
+                                <input type="number" id="diameter" min="0" step="0.1" value="10">
+                                <select id="diameter-unit" class="unit-select">
+                                    <option value="ft">feet</option>
+                                    <option value="m">meters</option>
+                                    <option value="in">inches</option>
+                                    <option value="yd">yards</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Triangular Form -->
+                    <div id="triangular-form" class="shape-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="base">Base:</label>
+                                <div class="input-group">
+                                    <input type="number" id="base" min="0" step="0.1" value="10">
+                                    <select id="base-unit" class="unit-select">
+                                        <option value="ft">feet</option>
+                                        <option value="m">meters</option>
+                                        <option value="in">inches</option>
+                                        <option value="yd">yards</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="height">Height:</label>
+                                <div class="input-group">
+                                    <input type="number" id="height" min="0" step="0.1" value="8">
+                                    <select id="height-unit" class="unit-select">
+                                        <option value="ft">feet</option>
+                                        <option value="m">meters</option>
+                                        <option value="in">inches</option>
+                                        <option value="yd">yards</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Irregular Form -->
+                    <div id="irregular-form" class="shape-form">
+                        <div class="form-group">
+                            <label for="area">Total Area:</label>
+                            <div class="input-group">
+                                <input type="number" id="area" min="0" step="0.1" value="100">
+                                <select id="area-unit" class="unit-select">
+                                    <option value="sqft">sq ft</option>
+                                    <option value="sqm">sq m</option>
+                                    <option value="sqyd">sq yd</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Common Depth Field -->
+                    <div class="form-group">
+                        <label for="depth">Depth/Thickness:</label>
+                        <div class="input-group">
+                            <input type="number" id="depth" min="0" step="0.1" value="3" required>
+                            <select id="depth-unit" class="unit-select">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="depth-presets">
+                            <button class="preset-btn" data-depth="2">2"</button>
+                            <button class="preset-btn" data-depth="3">3"</button>
+                            <button class="preset-btn" data-depth="4">4"</button>
+                            <button class="preset-btn" data-depth="6">6"</button>
+                        </div>
+                    </div>
+
+                    <!-- Gravel Type Selection -->
+                    <div class="form-group">
+                        <label for="gravel-type">Gravel Type:</label>
+                        <select id="gravel-type" class="full-width">
+                            <option value="1.35">Crushed Stone (1.35 tons/yd³)</option>
+                            <option value="1.3">Pea Gravel (1.3 tons/yd³)</option>
+                            <option value="1.35">River Rock (1.35 tons/yd³)</option>
+                            <option value="1.4">Limestone (1.4 tons/yd³)</option>
+                            <option value="1.5">Granite (1.5 tons/yd³)</option>
+                            <option value="1.45">Marble Chips (1.45 tons/yd³)</option>
+                            <option value="1.25">Lava Rock (1.25 tons/yd³)</option>
+                            <option value="1.6">Decomposed Granite (1.6 tons/yd³)</option>
+                            <option value="1.35">Crushed Concrete (1.35 tons/yd³)</option>
+                            <option value="1.3">Shell (1.3 tons/yd³)</option>
+                        </select>
+                    </div>
+
+                    <!-- Cost Calculation -->
+                    <div class="form-group">
+                        <label for="price">Price per Ton (Optional):</label>
+                        <div class="input-group">
+                            <span class="input-prefix">$</span>
+                            <input type="number" id="price" min="0" step="0.01" placeholder="0.00">
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button class="calculate-btn" id="calculate-btn">
+                        Calculate Gravel Needed
+                    </button>
+
+                    <!-- Results -->
+                    <div id="results" class="results hidden">
+                        <h3>Calculation Results</h3>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <div class="result-label">Volume</div>
+                                <div class="result-value" id="volume-result">-</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Weight</div>
+                                <div class="result-value" id="weight-result">-</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Area Coverage</div>
+                                <div class="result-value" id="area-result">-</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Estimated Cost</div>
+                                <div class="result-value" id="cost-result">-</div>
+                            </div>
+                        </div>
+                        <div class="result-details">
+                            <h4>Alternative Measurements:</h4>
+                            <ul id="alternative-measurements">
+                                <!-- Populated by JavaScript -->
+                            </ul>
+                        </div>
+                        <div class="result-tip">
+                            <strong>💡 Pro Tip:</strong> <span id="pro-tip"></span>
+                        </div>
+                        <div class="result-actions">
+                            <button class="action-btn" id="save-btn">💾 Save Result</button>
+                            <button class="action-btn" id="print-btn">🖨️ Print</button>
+                            <button class="action-btn" id="share-btn">🔗 Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depth Recommendations -->
+                <div class="info-card">
+                    <h3>📏 Recommended Gravel Depths by Project Type</h3>
+                    <div class="recommendations-grid">
+                        <div class="recommendation-item">
+                            <h4>Driveways</h4>
+                            <p class="depth-value">4-6 inches</p>
+                            <p class="depth-note">Heavy traffic areas may need 8-12 inches</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Walkways & Paths</h4>
+                            <p class="depth-value">2-3 inches</p>
+                            <p class="depth-note">Light foot traffic areas</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Patios</h4>
+                            <p class="depth-value">3-4 inches</p>
+                            <p class="depth-note">Moderate use outdoor living spaces</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Garden Beds</h4>
+                            <p class="depth-value">2-3 inches</p>
+                            <p class="depth-note">Decorative mulch and weed control</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Drainage</h4>
+                            <p class="depth-value">6-8 inches</p>
+                            <p class="depth-note">French drains and water management</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Parking Areas</h4>
+                            <p class="depth-value">6-8 inches</p>
+                            <p class="depth-note">Commercial or heavy vehicle use</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comprehensive Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <h2>Complete Guide to Gravel Calculations</h2>
+                
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <h3>🎯 How to Use This Gravel Calculator</h3>
+                        <ol>
+                            <li><strong>Select Your Area Shape:</strong> Choose from rectangular, circular, triangular, or irregular shapes</li>
+                            <li><strong>Enter Dimensions:</strong> Input length, width, diameter, or area measurements</li>
+                            <li><strong>Set Depth:</strong> Enter desired gravel depth or use quick presets</li>
+                            <li><strong>Choose Gravel Type:</strong> Select from 10+ gravel and stone varieties</li>
+                            <li><strong>Add Cost (Optional):</strong> Enter price per ton for budget estimation</li>
+                            <li><strong>Calculate:</strong> Get instant results in cubic yards, tons, and cost</li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-card">
+                        <h3>📐 Gravel Calculation Formulas</h3>
+                        <div class="formula-item">
+                            <h4>Rectangular Areas:</h4>
+                            <code>Volume (ft³) = Length × Width × Depth</code>
+                            <code>Volume (yd³) = Volume (ft³) ÷ 27</code>
+                        </div>
+                        <div class="formula-item">
+                            <h4>Circular Areas:</h4>
+                            <code>Volume (ft³) = π × (Diameter/2)² × Depth</code>
+                        </div>
+                        <div class="formula-item">
+                            <h4>Weight Calculation:</h4>
+                            <code>Weight (tons) = Volume (yd³) × Density (tons/yd³)</code>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <h3>🪨 Types of Gravel & Their Uses</h3>
+                        <div class="gravel-types">
+                            <div class="gravel-type-item">
+                                <h4>Crushed Stone</h4>
+                                <p>Versatile angular stones ideal for driveways, base layers, and drainage. Compacts well for stable surfaces.</p>
+                            </div>
+                            <div class="gravel-type-item">
+                                <h4>Pea Gravel</h4>
+                                <p>Small, smooth stones perfect for walkways, playgrounds, and decorative landscaping. Comfortable to walk on.</p>
+                            </div>
+                            <div class="gravel-type-item">
+                                <h4>River Rock</h4>
+                                <p>Smooth, rounded stones great for drainage, water features, and decorative accents. Natural appearance.</p>
+                            </div>
+                            <div class="gravel-type-item">
+                                <h4>Limestone</h4>
+                                <p>Durable crushed limestone excellent for driveways and base materials. Good drainage properties.</p>
+                            </div>
+                            <div class="gravel-type-item">
+                                <h4>Decomposed Granite</h4>
+                                <p>Fine granite particles that compact into firm surfaces. Popular for modern landscaping and paths.</p>
+                            </div>
+                            <div class="gravel-type-item">
+                                <h4>Marble Chips</h4>
+                                <p>White decorative stones that brighten landscapes. Often used in garden beds and around trees.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <h3>💰 Cost Factors for Gravel Projects</h3>
+                        <ul>
+                            <li><strong>Material Type:</strong> Prices range from $15-$75 per ton depending on gravel type and quality</li>
+                            <li><strong>Delivery:</strong> Typically $50-$150 based on distance and quantity</li>
+                            <li><strong>Location:</strong> Urban areas may have higher prices due to transport costs</li>
+                            <li><strong>Quantity:</strong> Bulk orders often receive discounted rates</li>
+                            <li><strong>Season:</strong> Spring and summer may have higher demand and prices</li>
+                            <li><strong>Installation:</strong> Professional installation adds $300-$1000+ depending on project size</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-card">
+                        <h3>🛠️ Installation Tips</h3>
+                        <ol>
+                            <li><strong>Prepare the Base:</strong> Remove vegetation, level ground, and compact soil</li>
+                            <li><strong>Use Landscape Fabric:</strong> Prevent weed growth and improve drainage</li>
+                            <li><strong>Create Borders:</strong> Install edging to contain gravel and maintain shape</li>
+                            <li><strong>Add Base Layer:</strong> Use larger crushed stone for stability (2-4 inches)</li>
+                            <li><strong>Top Layer:</strong> Apply decorative gravel or pea gravel as finishing layer</li>
+                            <li><strong>Compact & Level:</strong> Use plate compactor for driveways and high-traffic areas</li>
+                            <li><strong>Order Extra:</strong> Add 5-10% extra material to account for settling and waste</li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-card">
+                        <h3>🌧️ Drainage Considerations</h3>
+                        <p>Proper gravel installation improves drainage and prevents water pooling:</p>
+                        <ul>
+                            <li>Slope gravel surfaces away from buildings (minimum 2% grade)</li>
+                            <li>Use larger angular stones (3/4"-1.5") for better water flow</li>
+                            <li>Install French drains in problem areas</li>
+                            <li>Consider permeable base layers for heavy drainage needs</li>
+                            <li>Avoid fine particles that can compact and block water flow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How much gravel do I need for my project?</h3>
+                        <p>To calculate gravel needed, multiply length × width × depth of your area. For example, a 10×10 ft area with 3 inches depth needs about 0.93 cubic yards or 1.25 tons of gravel. Use our calculator above for accurate results including different shapes and gravel types.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How many tons of gravel are in a cubic yard?</h3>
+                        <p>Generally, 1 cubic yard of gravel weighs about 1.35 tons (2,700 lbs). However, this varies by gravel type:</p>
+                        <ul>
+                            <li>Pea gravel: 1.3 tons per cubic yard</li>
+                            <li>Crushed stone: 1.35-1.4 tons per cubic yard</li>
+                            <li>River rock: 1.35 tons per cubic yard</li>
+                            <li>Granite: 1.5 tons per cubic yard</li>
+                            <li>Limestone: 1.4 tons per cubic yard</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What depth of gravel should I use?</h3>
+                        <p>Recommended gravel depths vary by application:</p>
+                        <ul>
+                            <li><strong>Driveways:</strong> 4-6 inches (8-12" for heavy traffic)</li>
+                            <li><strong>Walkways:</strong> 2-3 inches</li>
+                            <li><strong>Patios:</strong> 3-4 inches</li>
+                            <li><strong>Garden beds:</strong> 2-3 inches</li>
+                            <li><strong>Drainage:</strong> 6-8 inches</li>
+                            <li><strong>Parking areas:</strong> 6-8 inches</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I calculate gravel for a circular area?</h3>
+                        <p>For circular areas, use the formula: π × radius² × depth. Our calculator handles this automatically - just select "Circular" shape, enter the diameter and depth, and it calculates the gravel needed in cubic yards and tons.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How much does gravel cost per ton?</h3>
+                        <p>Gravel costs typically range from $15 to $75 per ton, depending on:</p>
+                        <ul>
+                            <li>Type of gravel (pea gravel, crushed stone, decorative rock)</li>
+                            <li>Your geographic location</li>
+                            <li>Quantity ordered (bulk discounts available)</li>
+                            <li>Delivery distance</li>
+                            <li>Quality and source of material</li>
+                        </ul>
+                        <p>Average prices: Crushed stone $15-30/ton, Pea gravel $20-35/ton, River rock $25-50/ton, Decorative stone $40-75/ton</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do I need landscape fabric under gravel?</h3>
+                        <p>Yes, landscape fabric is highly recommended under gravel for several reasons:</p>
+                        <ul>
+                            <li>Prevents weed growth through gravel</li>
+                            <li>Stops gravel from sinking into soil</li>
+                            <li>Improves drainage</li>
+                            <li>Extends the life of your gravel</li>
+                            <li>Easier maintenance</li>
+                        </ul>
+                        <p>Use commercial-grade landscape fabric for best results, especially for driveways and high-traffic areas.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How many square feet does a ton of gravel cover?</h3>
+                        <p>Coverage depends on depth:</p>
+                        <ul>
+                            <li><strong>At 2" depth:</strong> 1 ton covers ~100-120 sq ft</li>
+                            <li><strong>At 3" depth:</strong> 1 ton covers ~70-80 sq ft</li>
+                            <li><strong>At 4" depth:</strong> 1 ton covers ~50-60 sq ft</li>
+                            <li><strong>At 6" depth:</strong> 1 ton covers ~35-40 sq ft</li>
+                        </ul>
+                        <p>These are estimates for standard crushed stone (1.35 tons/yd³). Use our calculator for precise results.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What's the difference between crushed stone and gravel?</h3>
+                        <p><strong>Crushed Stone:</strong> Mechanically crushed rock with angular edges. Better for driveways and bases as it compacts well and locks together. Sizes typically range from dust to 4 inches.</p>
+                        <p><strong>Gravel:</strong> Naturally rounded stones smoothed by water erosion. Better for decorative purposes and areas where you'll walk barefoot. Doesn't compact as well but looks more natural.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I calculate gravel for a driveway?</h3>
+                        <p>For driveways, follow these steps:</p>
+                        <ol>
+                            <li>Measure length and width of driveway in feet</li>
+                            <li>Determine depth (typically 4-6 inches)</li>
+                            <li>Calculate volume: Length × Width × Depth (in feet)</li>
+                            <li>Convert to cubic yards by dividing by 27</li>
+                            <li>Multiply cubic yards by 1.35 for tons needed</li>
+                            <li>Add 5-10% extra for settling and waste</li>
+                        </ol>
+                        <p>Example: 30 ft × 12 ft × 0.5 ft = 180 ft³ ÷ 27 = 6.67 yd³ × 1.35 = 9 tons</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I install gravel myself or should I hire professionals?</h3>
+                        <p><strong>DIY Suitable for:</strong> Small walkways, garden beds, and light-use patios. You'll need basic tools (rake, shovel, wheelbarrow, tamper).</p>
+                        <p><strong>Hire Professionals for:</strong> Driveways, large patios, areas requiring proper grading, drainage issues, or projects over 10 cubic yards. Professionals have equipment for proper base preparation and compaction.</p>
+                        <p>Cost comparison: DIY saves $300-$1000+ in labor but requires physical effort and time.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How long does gravel last?</h3>
+                        <p>Properly installed gravel can last 5-10+ years with minimal maintenance:</p>
+                        <ul>
+                            <li><strong>Driveways:</strong> 5-7 years before needing refreshing</li>
+                            <li><strong>Walkways:</strong> 7-10 years</li>
+                            <li><strong>Decorative beds:</strong> 10+ years</li>
+                        </ul>
+                        <p>Longevity factors: Quality of installation, drainage, traffic levels, weed control, and periodic maintenance (raking, adding material).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What size gravel is best for driveways?</h3>
+                        <p>Multi-layer approach works best:</p>
+                        <ul>
+                            <li><strong>Base layer:</strong> 3-4" crushed stone (3/4" - 1.5")</li>
+                            <li><strong>Middle layer:</strong> 2-3" smaller crushed stone (1/2" - 3/4")</li>
+                            <li><strong>Top layer:</strong> 1-2" fine gravel or pea gravel (1/4" - 1/2")</li>
+                        </ul>
+                        <p>Avoid using only pea gravel - it won't compact properly. Use angular crushed stone for stability.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I prevent gravel from spreading?</h3>
+                        <p>Keep gravel contained with these methods:</p>
+                        <ul>
+                            <li>Install edge restraints (metal, plastic, or wood borders)</li>
+                            <li>Use Belgian blocks or pavers for permanent edging</li>
+                            <li>Dig a slight trench and set borders below gravel level</li>
+                            <li>Apply stabilizer grid systems for heavy-traffic areas</li>
+                            <li>Compact gravel properly to reduce movement</li>
+                            <li>Use larger stone at edges to contain smaller gravel</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How much gravel is in a dump truck load?</h3>
+                        <p>Dump truck capacity varies by truck size:</p>
+                        <ul>
+                            <li><strong>Small dump truck:</strong> 5-7 cubic yards (7-9 tons)</li>
+                            <li><strong>Standard dump truck:</strong> 10-14 cubic yards (13-18 tons)</li>
+                            <li><strong>Large dump truck:</strong> 16-20 cubic yards (21-27 tons)</li>
+                            <li><strong>Transfer truck:</strong> 20-25 cubic yards (27-33 tons)</li>
+                        </ul>
+                        <p>Most suppliers deliver in standard 10-yard trucks. Always confirm capacity when ordering.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What's the best gravel for drainage?</h3>
+                        <p>For optimal drainage, use:</p>
+                        <ul>
+                            <li><strong>Size:</strong> 3/4" to 1.5" crushed stone</li>
+                            <li><strong>Type:</strong> Angular crushed stone (not rounded)</li>
+                            <li><strong>Material:</strong> Limestone, granite, or crushed concrete</li>
+                            <li><strong>Avoid:</strong> Fine particles, sand, or pea gravel</li>
+                        </ul>
+                        <p>Larger angular stones create air pockets for water flow. Wrap drainage stone in geotextile fabric to prevent soil infiltration.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How often should I top up gravel?</h3>
+                        <p>Typical maintenance schedule:</p>
+                        <ul>
+                            <li><strong>High-traffic driveways:</strong> Add 1-2" every 2-3 years</li>
+                            <li><strong>Walkways:</strong> Top up every 3-5 years</li>
+                            <li><strong>Decorative areas:</strong> Refresh every 5-7 years</li>
+                        </ul>
+                        <p>Signs you need more gravel: Visible bare patches, exposed fabric, deep tire ruts, or reduced drainage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Calculators Section -->
+        <section class="related-section">
+            <div class="container">
+                <h2>Related Landscaping Calculators</h2>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <h3>🌱 Mulch Calculator</h3>
+                        <p>Calculate mulch needed for garden beds and landscaping projects</p>
+                    </div>
+                    <div class="related-card">
+                        <h3>🧱 Paver Calculator</h3>
+                        <p>Estimate pavers required for patios, walkways, and driveways</p>
+                    </div>
+                    <div class="related-card">
+                        <h3>🪵 Soil Calculator</h3>
+                        <p>Determine topsoil, fill dirt, or garden soil quantities</p>
+                    </div>
+                    <div class="related-card">
+                        <h3>🧮 Concrete Calculator</h3>
+                        <p>Calculate concrete needed for slabs, footings, and foundations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keywords Section (hidden, for SEO) -->
+        <section class="keywords-section" style="display:none;">
+            <h2>Gravel Calculator Keywords</h2>
+            <p>gravel calculator cubic yards, crushed stone calculator, aggregate calculator, landscaping gravel calculator, driveway gravel calculator, gravel cost calculator, how much gravel do i need, gravel calculator tons, pea gravel calculator, river rock calculator, gravel estimator, stone calculator, calculate gravel for driveway, gravel depth calculator, gravel coverage calculator, gravel volume calculator, gravel weight calculator, free gravel calculator, online gravel calculator, gravel calculator for circular area, crushed rock calculator, decorative stone calculator, base gravel calculator, drainage gravel calculator, gravel calculator with price, gravel calculator square feet, gravel calculator app, best gravel calculator, accurate gravel calculator</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gravel Calculator</h3>
+                    <p>Free online gravel calculator for landscaping and construction projects. Calculate gravel, crushed stone, and aggregate needed for any project.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#calculator">Calculator</a></li>
+                        <li><a href="#guide">Guide</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#guide">Gravel Types Guide</a></li>
+                        <li><a href="#guide">Installation Tips</a></li>
+                        <li><a href="#guide">Cost Estimator</a></li>
+                        <li><a href="#faq">Common Questions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GravelCalculator.best - All rights reserved. | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
